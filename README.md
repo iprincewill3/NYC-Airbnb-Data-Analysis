@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Well known for having the 'Statue of Liberty', which was gifted from France, New York City (NYC) is the most populous city in the United States of America, with 5 boroughs, namely, Bronx, Brooklyn, Manhattan, Queens, and Staten Island. The NYC Airbnb Data Analysis is a project aimed at accessing the Airbnb listings in New York City, and also analyzing how each borough compares to each other in terms of their prices. In total, 3 datasets were involved in order to analyze the city's response to the Airbnb listings. The datasets were cleaned and analyzed, using Python (on Jupyter Notebook), and the outcome was visualized.
+Well known for having the 'Statue of Liberty', which was gifted from France, New York City (NYC) is the most populous city in the United States of America, with 5 boroughs, namely, Bronx, Brooklyn, Manhattan, Queens, and Staten Island. The NYC Airbnb Data Analysis is a project aimed at accessing the Airbnb listings in New York City, and also analyzing how each borough compares to others in terms of their prices. In total, 3 datasets were involved in order to analyze the city's response to the Airbnb listings. The datasets were cleaned and analyzed, using Python (on Jupyter Notebook), and the outcome was visualized.
 
 **_Disclaimer_**: _The NYC image (just before the introduction) was obtained from sonnenklar.tv and has only been used for illustrative purposes. Also, the datasets do not represent the city and have been utilized to demonstrate the various functions in Python._
 
@@ -34,7 +34,7 @@ The following steps were covered in the course of cleaning the 3 datasets that w
 
 * **Importing Python Libraries:**
 
-The first step on Jupyter Notebook was to import the Python libraries before accessing, cleaning, and transforming the datasets.
+The first step in Jupyter Notebook was to import the Python libraries before accessing, cleaning, and transforming the datasets.
 
 ```python
 import pandas as pd
@@ -59,7 +59,7 @@ airbnb_price = pd.read_csv("airbnb_price.csv")
 airbnb_price
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Importing_Dataset_1_Price.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_3.png)
 
 The second dataset (Room Type) was imported as an Excel file due to the '.xlsx' extension. 
 
@@ -70,7 +70,7 @@ airbnb_room_type = pd.read_excel("airbnb_room_type.xlsx")
 airbnb_room_type
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Importing_Dataset_2_Room_Type.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_4.png)
 
 Lastly, the third dataset (Review), a tab-separated file, was imported using 'pd.read_csv' but with the inclusion of '\t' as the separator or delimiter.
 
@@ -81,7 +81,7 @@ airbnb_review = pd.read_csv("airbnb_last_review.tsv", sep = "\t")
 airbnb_review
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Importing_Dataset_3_Review.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_5.png)
 
 ---
 
@@ -101,7 +101,7 @@ After importing and loading all 3 datasets and using them to create DataFrames, 
 print (airbnb_price.head(), "\n", airbnb_room_type.head(), "\n", airbnb_review.head())
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Viewing_3_datasets_head.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_6.png)
 
 ---
 
@@ -120,7 +120,7 @@ All columns had no null values in their rows.
 airbnb_price.info()
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Info_Dataset_1_Price.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_7.png)
 
 -- **Room Type DF.info:**
 
@@ -132,7 +132,7 @@ Null traces were observed in the 'Description' column as the number of non-null 
 airbnb_room_type.info()
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Info_Dataset_2_Room_Type.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_8.png)
 
 -- **Review DF.info:**
 
@@ -144,7 +144,7 @@ Similar to the Room Type situation, the 'Host Name' column of the Review DF appe
 airbnb_review.info()
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Info_Dataset_3_Review.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_9.png)
 
 ---
 
@@ -159,11 +159,15 @@ By using the '.columns' function, all columns of the 3 DataFrames were displayed
 airbnb_price.columns
 ```
 
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_10.png)
+
 ```python
 # Airbnb room type columns
 
 airbnb_room_type.columns
 ```
+
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_11.png)
 
 ```python
 # Airbnb review columns
@@ -171,7 +175,7 @@ airbnb_room_type.columns
 airbnb_review.columns
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Column_Checks_All_Datasets.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_12.png)
 
 ---
 
@@ -186,11 +190,17 @@ The total number of rows and columns was displayed using the '.shape' function. 
 airbnb_price.shape
 ```
 
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_13.png)
+
+
 ```python
 # Airbnb room type rows and columns number
 
 airbnb_room_type.shape
 ```
+
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_14.png)
+
 
 ```python
 # Airbnb review rows and columns number
@@ -198,7 +208,7 @@ airbnb_room_type.shape
 airbnb_review.shape
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Rows_and_Columns_Numbers_All_Datasets.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_15.png)
 
 ---
 
@@ -217,7 +227,7 @@ The data type of the 'Price' column was displayed as 'object', which would affec
 airbnb_price.dtypes
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Datatype_Dataset_1_Price.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_16.png)
 
 -- **Room Type DF.dtypes:**
 
@@ -229,11 +239,11 @@ All data types were accurate and had no issues in the Room Type DF.
 airbnb_room_type.dtypes
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Datatype_Dataset_2_Room_Type.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_17.png)
 
 -- **Review DF.dtypes:**
 
-From the 'Last Review' column, the entries showed the review date so the data type should be changed from 'object' to 'datetime'.
+From the 'Last Review' column, the entries showed the review date, so the data type should be changed from 'object' to 'datetime'.
 
 ```python
 # Airbnb review data types
@@ -241,7 +251,7 @@ From the 'Last Review' column, the entries showed the review date so the data ty
 airbnb_review.dtypes
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Datatype_Dataset_3_Review.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_18.png)
 
 ---
 
@@ -255,11 +265,11 @@ The '.value_counts' function was used to show the distinct row entries and their
 airbnb_price['nbhood_full'].value_counts()
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Value_Count_Dataset_1_Nbhood.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_19.png)
 
 * **Room Type Count (Room Type DF):***
 
-Distinct entries of the 'Room Type' column were also displayed. Due to irregularities of the letters/cases, some information appeared more than once although they had the same meaning. The column needed to be cleaned.
+Distinct entries of the 'Room Type' column were also displayed. Due to irregularities in the letters/cases, some information appeared more than once, although they had the same meaning. The column needed to be cleaned.
 
 ```python
 # Counting the Airbnb room types
@@ -267,7 +277,7 @@ Distinct entries of the 'Room Type' column were also displayed. Due to irregular
 airbnb_room_type['room_type'].value_counts()
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Value_Count_Dataset_2_Room_Type.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_20.png)
   
 * **Host Name Count (Review DF):**
 
@@ -279,7 +289,7 @@ Host names were displayed, as Michael topped the list with 215 reviews.
 airbnb_review['host_name'].value_counts()
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Value_Count_Dataset_3_Host_Name.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_21.png)
 
 ---
 
@@ -308,7 +318,7 @@ No indication of null values was observed in all columns when the Price DF was c
 airbnb_price_c.isnull().sum()
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Null_Check_Dataset_1_Price.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_23.png)
 
 ---
 
@@ -322,7 +332,7 @@ airbnb_price_c.isnull().sum()
 airbnb_rm_type_c.isnull().sum()
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Null_Check_Dataset_2_Room_Type.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_24.png)
 
 * **Null Values Assessment (Room Type DF):**
 
@@ -335,7 +345,7 @@ desc_null = airbnb_rm_type_c[airbnb_rm_type_c['description'].isnull()]
 desc_null
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Accessing_Null_Dataset_2_Room_Type.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_25.png)
 
 * **Null Values Replacement (Room Type DF):**
 
@@ -353,7 +363,7 @@ airbnb_rm_type_c['description'].fillna('Not Available', inplace = True)
 airbnb_rm_type_c['description'].isnull().sum()
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Replacing_Null_Dataset_2_Room_Type.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_27.png)
 
 ---
 
@@ -367,7 +377,7 @@ Upon assessing the Review DF for null values, it was observed that the 'Host Nam
 airbnb_review_c.isnull().sum()
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Null_Check_Dataset_3_Review.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_28.png)
 
 * **Null Values Assessment (Review DF):**
 
@@ -380,7 +390,7 @@ host_null = airbnb_review_c[airbnb_review_c['host_name'].isnull()]
 host_null
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Accessing_Null_Dataset_3_Review.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_29.png)
 
 * **Null Values Replacement (Review DF):**
 
