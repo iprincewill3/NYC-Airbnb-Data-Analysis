@@ -26,7 +26,7 @@ Well known for having the 'Statue of Liberty', which was gifted from France, New
 * Categorize the price range by boroughs.
 
 ## Data Sourcing
-In total, 3 datasets were used for this analysis, and all of them were sourced from [DataCamp](https://www.datacamp.com). The datasets have been uploaded as part of the files on this repository. The 3 datasets were Price, Room Type, and Review datasets, and each had 25,209 rows and 3 columns.
+In total, 3 datasets were used for this analysis, and all of them were sourced from [DataCamp](https://www.datacamp.com). The datasets have been uploaded as part of the files in this repository. The 3 datasets were Price, Room Type, and Review datasets, and each had 25,209 rows and 3 columns.
 
 ## Data Cleaning
 Python was the technical skill used in the data cleaning and EDA throughout this analysis. All codes were written and run on Jupyter Notebook. All Python library packages that were used include Pandas, Numpy, Matplotlib, Seaborn, Datetime, and Locale.
@@ -269,7 +269,7 @@ airbnb_price['nbhood_full'].value_counts()
 
 * **Room Type Count (Room Type DF):***
 
-Distinct entries of the 'Room Type' column were also displayed. Due to irregularities in the letters/cases, some information appeared more than once, although they had the same meaning. The column needed to be cleaned.
+Distinct entries of the 'Room Type' column were also displayed. Due to irregularities in the letters/cases, some information appeared more than once, although it had the same meaning. The column needed to be cleaned.
 
 ```python
 # Counting the Airbnb room types
@@ -725,11 +725,11 @@ The horizontal bar plot showed that Manhattan led the other boroughs in generate
 * Amongst all host names, Michael had the most reviews (215).
 * The timeframe covered in the analysis was between 01-01-2019 and 09-07-2019.
 * The least revenue ($22,974.00) by borough came from Staten Island.
-* Airbnb monthly listing price ($4,312.41) was more expensive when compared to that of the private rental market ($3,100.00).
+* Airbnb's monthly listing price ($4,312.41) was more expensive when compared to that of the private rental market ($3,100.00).
 * After categorizing the boroughs by price range, extravagant had the fewest offers (despite having the highest price range).
 
 ## Recommendation
-* The Review DF only had host names and last review (date) columns. Ratings should be included in the future to understand the customer satisfaction rate and see ways where the Airbnb services can be improved. 
+* The Review DF only had host names and last review (date) columns. Ratings should be included in the future to understand the customer satisfaction rate and see ways in which the Airbnb services can be improved. 
 * More data should be provided that can show more insight as to why boroughs like Staten Island were the least in terms of generated revenue. It could be as a result of low online presence on social media, poor nightlife in the boroughs or other attractions like game nights or nearness to facilities like the airport that could have made the difference.
 * Shows and other social activities should be encouraged in the boroughs that had lesser turnout in revenue to boost income.
 
