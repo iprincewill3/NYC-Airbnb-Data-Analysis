@@ -408,7 +408,7 @@ airbnb_review_c['host_name'].fillna('Absent', inplace = True)
 airbnb_review_c.isnull().sum()
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Replacing_Null_Dataset_3_Review.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_31.png)
 
 ---
 
@@ -423,11 +423,15 @@ After checking all 3 DataFrames for duplicate values, no duplicate was found in 
 airbnb_price_c.duplicated().sum()
 ```
 
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_32.png)
+
 ```python
 # Airbnb room type duplicates
 
 airbnb_rm_type_c.duplicated().sum()
 ```
+
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_33.png)
 
 ```python
 # Airbnb review duplicates
@@ -435,11 +439,11 @@ airbnb_rm_type_c.duplicated().sum()
 airbnb_review_c.duplicated().sum()
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Duplicate_Checks_All_Datasets.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_34.png)
 
 ---
 
-* **Room Type Column Uniformity (Lower Case):**
+* **Room Type Column Uniformity (Lowercase):**
 
 From the initial assessment of the 'Room Type' column in the Room Type DF, it was observed that the non-uniformity of the letters resulted in extra entries with the same meaning down the column. All cases were changed to lowercase to ensure uniformity so that Python would pick the distinct room types for analysis.
 
@@ -450,7 +454,7 @@ airbnb_rm_type_c['room_type'] = airbnb_rm_type_c['room_type'].str.lower()
 airbnb_rm_type_c['room_type']
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Lower_Case_Room_Type.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_35.png)
 
 After unifying the cases, the count of room types was done, and it was seen that there were 3 distinct room types.
 
@@ -460,7 +464,7 @@ After unifying the cases, the count of room types was done, and it was seen that
 airbnb_rm_type_c['room_type'].value_counts()
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Value_Count_New_Dataset_2_Room_Type.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_36.png)
 
 ---
 
@@ -475,7 +479,7 @@ airbnb_price_c['price'] = airbnb_price_c['price'].str.replace(' dollars', '')
 airbnb_price_c
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Column_Split_String_Removal_Dataset_1_Price.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_37.png)
 
 After extracting the string, the data type was changed to float for ease of data manipulation.
 
@@ -486,7 +490,7 @@ airbnb_price_c['price'] = airbnb_price_c['price'].astype('float')
 airbnb_price_c['price'].dtype
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Datatype_to_Float_Dataset_1_Price.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_38.png)
 
 ## EDA
 This section explored more insights from all DataFrames during the analysis.
@@ -501,7 +505,7 @@ The count, mean, percentiles, minimum and maximum values of the 'Price' column w
 airbnb_price_c['price'].describe()
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Summary_Stat_Dataset_1_Price.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_39.png)
 
 ---
 
@@ -519,7 +523,7 @@ plt.title('Histogram Showing the Frequency of Prices', pad = 20)
 plt.show()
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Histogram_Dataset_1_Price.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_40.png)
 
 ---
 
@@ -540,7 +544,7 @@ airbnb_review_c['last_review'] = pd.to_datetime(airbnb_review_c['last_review'])
 airbnb_review_c.dtypes
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Timeframe_Datatype_Change_Dataset_3_Review.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_42.png)
 
 From the earliest date in the 'Last Review' column to the most recent date, the time frame was assessed. The earliest date was 01-01-2019, and the most recent date was 09-07-2019.
 
@@ -552,6 +556,8 @@ first_date = airbnb_review_c['last_review'].dt.date.min()
 first_date
 ```
 
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_43.png)
+
 ```python
 # Last date
 
@@ -559,13 +565,15 @@ last_date = airbnb_review_c['last_review'].dt.date.max()
 last_date
 ```
 
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_44.png)
+
 ```python
 # Timeframe for the Airbnb review
 
 print ("The time frame is between {} and {}.". format (last_date, first_date))
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Timframe_Solution_Dataset_3.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_45.png)
 
 ---
 
@@ -585,7 +593,7 @@ airbnb_merged = pd.merge(price_room, airbnb_review_c, how = 'outer', on = 'listi
 airbnb_merged
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Joining_All_Datasets.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_46.png)
 
 ---
 
@@ -607,7 +615,7 @@ avg_per_year = round(airbnb_merged['price_per_month'].mean(), 2)
 print("Airbnb monthly costs are ${}, while the private rental market, it costs {}.". format (avg_per_year, '$3100.00'))
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Comparing_Cost_to_Private_Rental.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_47.png)
 
 ---
 
@@ -624,7 +632,7 @@ airbnb_merged['borough'] = airbnb_merged['nbhood_full'].str.split(',').str[0]
 airbnb_merged
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Price_by_m_Borough_Merged_Datasets.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_48.png)
 
 ---
 
@@ -639,7 +647,7 @@ abmg = airbnb_merged.groupby('borough')['price'].agg(['mean', 'sum', 'median', '
 abmg
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Avg_Price_Per_Borough_Merged_Datasets.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_49.png)
 
 ---
 
@@ -654,7 +662,7 @@ abmgs = airbnb_merged.groupby('borough')['price'].describe().sort_values('mean',
 abmgs
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Summary_Stat_by_Borough_Merged_Datasets.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_50.png)
 
 ---
 
@@ -676,7 +684,7 @@ abmg_cat_grp = airbnb_merged.groupby(['borough', 'price_range'])['price_range'].
 abmg_cat_grp
 ```
 
-![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Categorizing_Borough_by_Price_Range.png)
+![](https://github.com/iprincewill3/NYC-Airbnb-Data-Analysis/blob/main/Output_51.png)
 
 ---
 
